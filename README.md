@@ -6,7 +6,7 @@ It will not appear in the Flarum admin panel.
 
 There is currently a single feature: ensure the JSON column type is supported by the database.
 
-To use in an extension, create a new migration that executes before all other extensions with the following code (where `vendor-name` is the internal Flarum extension ID for your extension):
+To use in an extension, create a new migration that executes before all other migrations with the following code (where `vendor-name` is the internal Flarum extension ID for your extension):
 
 ```php
 <?php
@@ -19,4 +19,4 @@ return Migration::ensureJsonColumnSupport('vendor-name');
 
 To work around false positives, the `kilowhat.ignore-mysql-requirement` key can be set to `true` in `config.php`.
 
-After the migration have run, the requirements will not be checked again.
+After the migrations have run, the requirements will not be checked again.
